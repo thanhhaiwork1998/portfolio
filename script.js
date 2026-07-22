@@ -5,6 +5,19 @@
   'use strict';
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- 0. Live date/time (thời gian thực) ---------- */
+  const liveDate = document.getElementById('liveDate');
+  if (liveDate) {
+    const thu = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+    const p2 = (n) => String(n).padStart(2, '0');
+    const tick = () => {
+      const d = new Date();
+      liveDate.textContent = `${thu[d.getDay()]}, ${p2(d.getDate())}/${p2(d.getMonth() + 1)}/${d.getFullYear()} · ${p2(d.getHours())}:${p2(d.getMinutes())}:${p2(d.getSeconds())}`;
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+
   /* ---------- 1. Scroll-reveal (IntersectionObserver) ---------- */
   const revealEls = document.querySelectorAll('[data-reveal]');
   const io = new IntersectionObserver((entries) => {
