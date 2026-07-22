@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Local tooling (dev server config, không cần khi deploy)
+.claude/
+
+# Ảnh gốc/nguồn — chỉ dùng để cắt, không cần lên web
+assets/projects/*/_raw/
+
+# File thừa không dùng cho website
+/ẢNH/
+/avatar.JPG
