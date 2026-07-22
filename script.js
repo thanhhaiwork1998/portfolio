@@ -43,7 +43,7 @@
   onScroll();
 
   /* ---------- 3. Active nav link on scroll (scroll-spy) ---------- */
-  const sections = ['about', 'skills', 'work', 'contact'].map((id) => document.getElementById(id));
+  const sections = ['skills', 'work', 'contact'].map((id) => document.getElementById(id));
   const navLinks = document.querySelectorAll('[data-nav]');
   const spy = new IntersectionObserver((entries) => {
     entries.forEach((e) => {

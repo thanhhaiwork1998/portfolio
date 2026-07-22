@@ -30,7 +30,6 @@
       <span class="nav__logo-mark">◆</span> Thanh Hai<span> Portfolio</span>
     </a>
     <ul class="nav__links">
-      <li><a href="#about" data-nav>Giới thiệu</a></li>
       <li><a href="#skills" data-nav>Kỹ năng</a></li>
       <li><a href="#work" data-nav>Dự án</a></li>
       <li><a href="#contact" data-nav>Liên hệ</a></li>
@@ -110,44 +109,10 @@
     </div>
   </div>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="section about" id="about">
-    <div class="about__grid">
-      <div class="about__left reveal" data-reveal>
-        <span class="section__tag">01 — Về tôi</span>
-        <h2 class="section__title">Thiết kế là cách<br/>tôi <em>kể chuyện</em>.</h2>
-      </div>
-      <div class="about__right">
-        <p class="about__lead reveal" data-reveal>
-          Tôi tin rằng mỗi thương hiệu đều có một câu chuyện chưa được kể.
-          Công việc của tôi là tìm ra nó và biến nó thành hình ảnh, chuyển động
-          và cảm xúc mà người xem có thể cảm nhận ngay lập tức.
-        </p>
-        <div class="about__cards">
-          <div class="acard reveal" data-reveal style="--d:.05s">
-            <span class="acard__icon">🎨</span>
-            <h3>Graphic Design</h3>
-            <p>Nhận diện thương hiệu, poster, ấn phẩm truyền thông với tư duy thẩm mỹ hiện đại.</p>
-          </div>
-          <div class="acard reveal" data-reveal style="--d:.15s">
-            <span class="acard__icon">🎬</span>
-            <h3>Video Editing</h3>
-            <p>Dựng phim, color grading, motion graphics cho quảng cáo & mạng xã hội.</p>
-          </div>
-          <div class="acard reveal" data-reveal style="--d:.25s">
-            <span class="acard__icon">✨</span>
-            <h3>Creative Direction</h3>
-            <p>Định hướng concept, xây dựng phong cách nhất quán từ ý tưởng đến sản phẩm.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ SKILLS ============ -->
   <section class="section skills" id="skills">
     <div class="skills__head">
-      <span class="section__tag reveal" data-reveal>02 — Kỹ năng</span>
+      <span class="section__tag reveal" data-reveal>01 — Kỹ năng</span>
       <h2 class="section__title reveal" data-reveal>Bộ công cụ &amp; chuyên môn</h2>
     </div>
 
@@ -188,28 +153,29 @@
   <!-- ============ WORK ============ -->
   <section class="section work" id="work">
     <div class="work__head">
-      <span class="section__tag reveal" data-reveal>03 — Dự án nổi bật</span>
+      <span class="section__tag reveal" data-reveal>02 — Dự án nổi bật</span>
       <h2 class="section__title reveal" data-reveal>Dấu ấn qua từng <em>công ty</em></h2>
       <p class="work__sub reveal" data-reveal>Mỗi thương hiệu một màu sắc riêng — và đây là những sản phẩm thiết kế tôi đã tạo nên.</p>
     </div>
 
     <!-- ===== Company 01 · Scent Homes ===== -->
     <article class="company reveal" data-reveal style="--c1:#d62828;--c2:#ff6b5c">
-      <div class="company__bar">
-        <div class="company__id">
-          <span class="company__logo">SH</span>
-          <div class="company__idtext">
-            <h3 class="company__name">Scent Homes Việt Nam</h3>
-            <p class="company__role">Thiết bị tỏa hương cao cấp · Scenting your brand</p>
-          </div>
-        </div>
-        <div class="company__time">
-          <span class="company__index">01</span>
-        </div>
-      </div>
-
       <div class="company__grid">
         <aside class="company__about">
+          <div class="company__bar">
+            <div class="company__id">
+              <span class="company__logo" data-initials="SH">
+                <img src="assets/projects/scent/logo.png" alt="Scent Homes logo" class="company__logo-img" onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()" />
+              </span>
+              <div class="company__idtext">
+                <h3 class="company__name">Scent Homes Việt Nam</h3>
+                <p class="company__role">Thiết bị tỏa hương cao cấp · Scenting your brand</p>
+              </div>
+            </div>
+            <div class="company__time">
+              <span class="company__index">01</span>
+            </div>
+          </div>
           <p class="company__tagline">Scenting your brand</p>
           <p class="company__desc">
             Công ty cung cấp giải pháp thiết bị tỏa hương cao cấp cho không gian kinh doanh,
@@ -266,21 +232,22 @@
 
     <!-- ===== Company 02 · Dr Thành Sơn ===== -->
     <article class="company reveal" data-reveal style="--c1:#1CB2C1;--c2:#436F87">
-      <div class="company__bar">
-        <div class="company__id">
-          <span class="company__logo">TS</span>
-          <div class="company__idtext">
-            <h3 class="company__name">Dr Thành Sơn</h3>
-            <p class="company__role">Phòng khám Sản Phụ khoa · Long Biên, Hà Nội</p>
-          </div>
-        </div>
-        <div class="company__time">
-          <span class="company__index">02</span>
-        </div>
-      </div>
-
       <div class="company__grid">
         <aside class="company__about">
+          <div class="company__bar">
+            <div class="company__id">
+              <span class="company__logo" data-initials="TS">
+                <img src="assets/projects/drts/logo.png" alt="Dr Thành Sơn logo" class="company__logo-img" onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()" />
+              </span>
+              <div class="company__idtext">
+                <h3 class="company__name">Dr Thành Sơn</h3>
+                <p class="company__role">Phòng khám Sản Phụ khoa · Long Biên, Hà Nội</p>
+              </div>
+            </div>
+            <div class="company__time">
+              <span class="company__index">02</span>
+            </div>
+          </div>
           <p class="company__tagline">“Gieo mầm hạnh phúc”</p>
           <p class="company__desc">
             Hệ thống phòng khám sản phụ khoa tiên phong trong tư vấn hỗ trợ sinh sản.
@@ -323,21 +290,22 @@
 
     <!-- ===== Company 03 · Vet Equipment ===== -->
     <article class="company reveal" data-reveal style="--c1:#3452e6;--c2:#6d8bff">
-      <div class="company__bar">
-        <div class="company__id">
-          <span class="company__logo">VE</span>
-          <div class="company__idtext">
-            <h3 class="company__name">Vet Equipment</h3>
-            <p class="company__role">Thiết bị &amp; Công nghệ Thú y Việt Nam</p>
-          </div>
-        </div>
-        <div class="company__time">
-          <span class="company__index">03</span>
-        </div>
-      </div>
-
       <div class="company__grid">
         <aside class="company__about">
+          <div class="company__bar">
+            <div class="company__id">
+              <span class="company__logo" data-initials="VE">
+                <img src="assets/projects/vet/logo.png" alt="Vet Equipment logo" class="company__logo-img" onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()" />
+              </span>
+              <div class="company__idtext">
+                <h3 class="company__name">Vet Equipment</h3>
+                <p class="company__role">Thiết bị &amp; Công nghệ Thú y Việt Nam</p>
+              </div>
+            </div>
+            <div class="company__time">
+              <span class="company__index">03</span>
+            </div>
+          </div>
           <p class="company__tagline">Nâng tầm chẩn đoán thú y</p>
           <p class="company__desc">
             Công ty cung cấp giải pháp thiết bị thú y toàn diện — máy siêu âm, kính hiển vi,
@@ -368,21 +336,22 @@
 
     <!-- ===== Company 04 · VLab ===== -->
     <article class="company reveal" data-reveal style="--c1:#12a05a;--c2:#5fe0a0">
-      <div class="company__bar">
-        <div class="company__id">
-          <span class="company__logo">VL</span>
-          <div class="company__idtext">
-            <h3 class="company__name">VLab</h3>
-            <p class="company__role">Phòng xét nghiệm chẩn đoán thú y</p>
-          </div>
-        </div>
-        <div class="company__time">
-          <span class="company__index">04</span>
-        </div>
-      </div>
-
       <div class="company__grid">
         <aside class="company__about">
+          <div class="company__bar">
+            <div class="company__id">
+              <span class="company__logo" data-initials="VL">
+                <img src="assets/projects/vlab/logo.png" alt="VLab logo" class="company__logo-img" onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()" />
+              </span>
+              <div class="company__idtext">
+                <h3 class="company__name">VLab</h3>
+                <p class="company__role">Phòng xét nghiệm chẩn đoán thú y</p>
+              </div>
+            </div>
+            <div class="company__time">
+              <span class="company__index">04</span>
+            </div>
+          </div>
           <p class="company__tagline">Khoa học · Chính xác · Tin cậy</p>
           <p class="company__desc">
             Phòng xét nghiệm trực thuộc Công ty Thiết bị &amp; Công nghệ Thú y Việt Nam, cố vấn
@@ -429,7 +398,7 @@
   <!-- ============ CONTACT ============ -->
   <section class="section contact" id="contact">
     <div class="contact__inner reveal" data-reveal>
-      <span class="section__tag">04 — Liên hệ</span>
+      <span class="section__tag">03 — Liên hệ</span>
       <h2 class="contact__title">Cùng hợp tác<br/>tạo nên điều <em>tuyệt vời</em> nhé?</h2>
       <a href="thanhhai.work.1998@gmail.com" class="contact__mail" data-magnetic>thanhhai.work.1998@gmail.com</a>
       <div class="contact__socials">
