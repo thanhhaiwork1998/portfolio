@@ -173,10 +173,10 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
 
 /* --- Company cluster (themed by --c1 / --c2) --- */
 .company{--c1:#7c5cff;--c2:#ff5c9d;position:relative;margin-bottom:40px;padding:clamp(22px,3vw,40px);
-  border-radius:28px;border:1px solid color-mix(in srgb,var(--c1) 35%,transparent);
+  border-radius:28px;border:1px solid color-mix(in srgb,var(--c1) 55%,transparent);
   background:
-    radial-gradient(120% 90% at 100% 0%,color-mix(in srgb,var(--c1) 16%,transparent),transparent 60%),
-    radial-gradient(120% 90% at 0% 100%,color-mix(in srgb,var(--c2) 16%,transparent),transparent 60%),
+    radial-gradient(120% 90% at 100% 0%,color-mix(in srgb,var(--c1) 50%,transparent),transparent 68%),
+    radial-gradient(120% 90% at 0% 100%,color-mix(in srgb,var(--c2) 50%,transparent),transparent 68%),
     rgba(255,255,255,.02);
   overflow:clip}
 .company::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(var(--c1),var(--c2))}
@@ -205,6 +205,8 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
 .company__tags span{font-size:.8rem;padding:6px 13px;border-radius:100px;color:color-mix(in srgb,var(--c1) 80%,#fff);border:1px solid color-mix(in srgb,var(--c1) 30%,transparent);background:color-mix(in srgb,var(--c1) 8%,transparent)}
 
 .company__gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+/* Lưới 3 cột kiểu feed Instagram (post dọc) */
+.company__gallery--three{grid-template-columns:repeat(3,1fr);align-items:start}
 .shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#0d0d14;cursor:pointer;
   transition:transform .5s var(--ease),box-shadow .5s;transform-style:preserve-3d}
 .shot--wide{grid-column:1/-1}
@@ -212,11 +214,22 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
 .shot img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;aspect-ratio:3/2;transition:transform .6s var(--ease)}
 /* Ảnh nội san khổ rộng hiện đầy đủ, không cắt */
 .shot--wide img{height:auto;object-fit:contain;aspect-ratio:auto}
+/* Ảnh dọc (post Instagram) hiện đầy đủ, không cắt */
+.shot--tall img{height:auto;object-fit:contain;aspect-ratio:auto}
+/* Ô chiếm 2 cột trong lưới 3 cột */
+.shot--span2{grid-column:span 2}
+/* Nhiều lưới trong cùng cột gallery */
+.company__galleries{display:flex;flex-direction:column;gap:16px}
+/* Ô đồng nhất theo tỉ lệ để khớp chiều cao trong cùng hàng */
+.shot--land{aspect-ratio:4/3}
+.shot--sq{aspect-ratio:1/1}
+.shot--land img,.shot--sq img{width:100%;height:100%;object-fit:cover;object-position:center;aspect-ratio:auto}
 .shot:hover{box-shadow:0 24px 50px rgba(0,0,0,.5)}
 .shot:hover img{transform:scale(1.06)}
 /* Ô chờ ảnh (khi file chưa tồn tại) */
 .shot--empty{aspect-ratio:3/2;cursor:default}
 .shot--wide.shot--empty{aspect-ratio:16/9}
+.shot--tall.shot--empty{aspect-ratio:3/4}
 .shot--empty::after{content:'Lưu ảnh: 'attr(data-empty);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   text-align:center;padding:20px;color:var(--muted);font-size:.85rem;font-family:'Space Grotesk';
   background:repeating-linear-gradient(45deg,rgba(255,255,255,.03),rgba(255,255,255,.03) 12px,transparent 12px,transparent 24px)}
