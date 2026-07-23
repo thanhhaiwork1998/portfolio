@@ -226,38 +226,27 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
 .company__tags{display:flex;flex-wrap:wrap;gap:8px}
 .company__tags span{font-size:.8rem;padding:6px 13px;border-radius:100px;color:color-mix(in srgb,var(--c1) 80%,#fff);border:1px solid color-mix(in srgb,var(--c1) 30%,transparent);background:color-mix(in srgb,var(--c1) 8%,transparent)}
 
-.company__gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-/* Lưới 3 cột kiểu feed Instagram (post dọc) */
-.company__gallery--three{grid-template-columns:repeat(3,1fr);align-items:start}
-.shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#0d0d14;cursor:pointer;
+/* Gallery: nhóm theo danh mục, mỗi ảnh dùng hết chiều ngang, xếp dọc */
+.company__gallery{display:flex;flex-direction:column;gap:36px}
+.cat{display:flex;flex-direction:column;gap:16px}
+.cat__title{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:'Space Grotesk';font-weight:700;
+  font-size:1.1rem;letter-spacing:1px;text-transform:uppercase;color:color-mix(in srgb,var(--c1) 82%,#fff)}
+.cat__title::before{content:'';width:30px;height:3px;border-radius:2px;flex-shrink:0;background:linear-gradient(90deg,var(--c1),var(--c2))}
+.cat__title small{font-size:.72rem;font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted)}
+
+.shot{position:relative;width:100%;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#0d0d14;cursor:pointer;
   transition:transform .5s var(--ease),box-shadow .5s;transform-style:preserve-3d}
-.shot--wide{grid-column:1/-1}
-/* Ảnh nhỏ dùng chung một tỉ lệ khung để khớp nhau */
-.shot img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;aspect-ratio:3/2;transition:transform .6s var(--ease)}
-/* Ảnh nội san khổ rộng hiện đầy đủ, không cắt */
-.shot--wide img{height:auto;object-fit:contain;aspect-ratio:auto}
-/* Ảnh dọc (post Instagram) hiện đầy đủ, không cắt */
-.shot--tall img{height:auto;object-fit:contain;aspect-ratio:auto}
-/* Ô chiếm 2 cột trong lưới 3 cột */
-.shot--span2{grid-column:span 2}
-/* Nhiều lưới trong cùng cột gallery */
-.company__galleries{display:flex;flex-direction:column;gap:16px}
-/* Ô đồng nhất theo tỉ lệ để khớp chiều cao trong cùng hàng */
-.shot--land{aspect-ratio:4/3}
-.shot--sq{aspect-ratio:1/1}
-.shot--land img,.shot--sq img{width:100%;height:100%;object-fit:cover;object-position:center;aspect-ratio:auto}
+.shot img{width:100%;height:auto;object-fit:contain;display:block;transition:transform .6s var(--ease)}
 .shot:hover{box-shadow:0 24px 50px rgba(0,0,0,.5)}
-.shot:hover img{transform:scale(1.06)}
+.shot:hover img{transform:scale(1.03)}
 /* Ô chờ ảnh (khi file chưa tồn tại) */
-.shot--empty{aspect-ratio:3/2;cursor:default}
-.shot--wide.shot--empty{aspect-ratio:16/9}
-.shot--tall.shot--empty{aspect-ratio:3/4}
+.shot--empty{aspect-ratio:16/9;cursor:default}
 .shot--empty::after{content:'Lưu ảnh: 'attr(data-empty);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   text-align:center;padding:20px;color:var(--muted);font-size:.85rem;font-family:'Space Grotesk';
   background:repeating-linear-gradient(45deg,rgba(255,255,255,.03),rgba(255,255,255,.03) 12px,transparent 12px,transparent 24px)}
-.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;font-size:.85rem;color:#fff;
-  background:linear-gradient(transparent,rgba(0,0,0,.8));transform:translateY(8px);opacity:0;transition:.4s var(--ease)}
-.shot figcaption b{color:color-mix(in srgb,var(--c1) 75%,#fff);font-weight:700;margin-right:6px}
+.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 16px;font-size:.92rem;color:#fff;
+  background:linear-gradient(transparent,rgba(0,0,0,.85));transform:translateY(8px);opacity:0;transition:.4s var(--ease)}
+.shot figcaption b{color:color-mix(in srgb,var(--c1) 78%,#fff);font-weight:700;margin-right:6px}
 .shot:hover figcaption{transform:none;opacity:1}
 
 .company--next{display:flex;align-items:center;gap:20px;padding:30px;border-style:dashed;--c1:#7c5cff;--c2:#3fe0d0}
