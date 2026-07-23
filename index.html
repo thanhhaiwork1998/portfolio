@@ -75,18 +75,23 @@
       <!-- Right: creative avatar -->
       <div class="hero__visual reveal" data-reveal style="--d:.3s">
         <div class="avatar" data-tilt>
-          <div class="avatar__frame">
-            <div class="avatar__glow"></div>
-            <div class="avatar__img" id="avatarImg">
-              <img src="assets/avatar.jpg" alt="Dương Thanh Hải — Graphic Designer & Video Editor" class="avatar__photo" onerror="this.style.display='none';this.parentNode.classList.add('avatar__img--empty');this.parentNode.setAttribute('data-empty','Lưu ảnh vào assets/avatar.jpg');" />
+          <div class="avatar__float">
+            <div class="avatar__frame">
+              <div class="avatar__glow"></div>
+              <div class="avatar__img" id="avatarImg">
+                <img src="assets/avatar.jpg" alt="Dương Thanh Hải — Graphic Designer & Video Editor" class="avatar__photo" onerror="this.style.display='none';this.parentNode.classList.add('avatar__img--empty');this.parentNode.setAttribute('data-empty','Lưu ảnh vào assets/avatar.jpg');" />
+              </div>
             </div>
           </div>
-          <!-- floating creative badges -->
-          <div class="chip chip--1" data-float>Adobe Photoshop</div>
-          <div class="chip chip--2" data-float>Premiere Pro</div>
-          <div class="chip chip--3" data-float>After Effects</div>
-          <div class="chip chip--4" data-float>Illustrator</div>
+          <!-- vòng xoay + chấm sáng bay quanh -->
           <div class="avatar__ring"></div>
+          <div class="avatar__ring avatar__ring--2"></div>
+          <div class="avatar__orbit"><span class="orbit-dot"></span></div>
+          <div class="avatar__orbit avatar__orbit--2"><span class="orbit-dot orbit-dot--pink"></span></div>
+          <div class="avatar__orbit avatar__orbit--3"><span class="orbit-dot orbit-dot--gold"></span></div>
+          <span class="avatar__spark avatar__spark--1"></span>
+          <span class="avatar__spark avatar__spark--2"></span>
+          <span class="avatar__spark avatar__spark--3"></span>
         </div>
       </div>
     </div>
@@ -410,10 +415,10 @@
       </a>
 
       <div class="contact__socials">
-        <a href="#" class="social" data-magnetic><span class="social__badge">Be</span>Behance</a>
-        <a href="#" class="social" data-magnetic><span class="social__badge">Ig</span>Instagram</a>
-        <a href="#" class="social" data-magnetic><span class="social__badge">Yt</span>YouTube</a>
-        <a href="#" class="social" data-magnetic><span class="social__badge">in</span>LinkedIn</a>
+        <a href="https://zalo.me/0979863798" class="social" target="_blank" rel="noopener" data-magnetic><span class="social__badge">Za</span>Zalo</a>
+        <a href="https://www.facebook.com/duonghai0307/" class="social" target="_blank" rel="noopener" data-magnetic><span class="social__badge">Fb</span>Facebook</a>
+        <a href="#contact" class="social" data-magnetic><span class="social__badge">Tg</span>Telegram</a>
+        <a href="https://www.instagram.com/thanhhai_duong/" class="social" target="_blank" rel="noopener" data-magnetic><span class="social__badge">Ig</span>Instagram</a>
       </div>
     </div>
     <footer class="footer">
