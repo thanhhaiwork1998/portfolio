@@ -27,7 +27,7 @@
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
   revealEls.forEach((el) => io.observe(el));
 
   /* ---------- 2. Scroll progress + nav state ---------- */
@@ -178,7 +178,7 @@
   if (lb) {
     const lbImg = document.getElementById('lightboxImg');
     const lbCap = document.getElementById('lightboxCap');
-    const shots = Array.from(document.querySelectorAll('.company__gallery .shot img'));
+    const shots = Array.from(document.querySelectorAll('.company__gallery .shot:not(.shot--clone) img'));
     let idx = 0;
 
     const show = (i) => {

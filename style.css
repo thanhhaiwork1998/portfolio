@@ -179,9 +179,16 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
 .bar__label b{color:var(--ink)}
 .bar__track{display:block;height:8px;border-radius:100px;background:rgba(255,255,255,.07);overflow:hidden}
 .bar__track i{display:block;height:100%;width:0;border-radius:100px;background:var(--grad);transition:width 1.3s var(--ease)}
-.toolbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:56px}
-.toolbar span{padding:10px 20px;border-radius:100px;border:1px solid var(--line);font-size:.88rem;color:var(--muted);transition:.3s;cursor:default}
-.toolbar span:hover{color:var(--ink);border-color:var(--pink);transform:translateY(-3px)}
+/* Dải phần mềm cuộn ngang (ngược chiều marquee trên) + mờ 2 mép + dừng khi hover */
+.toolbar{margin-top:56px;overflow:hidden;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.toolbar__track{display:flex;gap:12px;width:max-content;animation:toolbarScroll 34s linear infinite}
+.toolbar:hover .toolbar__track{animation-play-state:paused}
+.toolbar span{flex-shrink:0;padding:10px 20px;border-radius:100px;border:1px solid var(--line);font-size:.88rem;color:var(--muted);white-space:nowrap;transition:color .3s,border-color .3s,transform .3s,background .3s;cursor:default}
+.toolbar span:hover{color:var(--ink);border-color:transparent;background:rgba(255,255,255,.05);transform:scale(1.08)}
+@keyframes toolbarScroll{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media (prefers-reduced-motion:reduce){.toolbar__track{animation:none}}
 
 /* WORK */
 .work__head{text-align:center;margin-bottom:56px}
@@ -227,12 +234,28 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
 .company__tags span{font-size:.8rem;padding:6px 13px;border-radius:100px;color:color-mix(in srgb,var(--c1) 80%,#fff);border:1px solid color-mix(in srgb,var(--c1) 30%,transparent);background:color-mix(in srgb,var(--c1) 8%,transparent)}
 
 /* Gallery: nhóm theo danh mục, mỗi ảnh dùng hết chiều ngang, xếp dọc */
-.company__gallery{display:flex;flex-direction:column;gap:36px}
-.cat{display:flex;flex-direction:column;gap:16px}
-.cat__title{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:'Space Grotesk';font-weight:700;
-  font-size:1.1rem;letter-spacing:1px;text-transform:uppercase;color:color-mix(in srgb,var(--c1) 82%,#fff)}
-.cat__title::before{content:'';width:30px;height:3px;border-radius:2px;flex-shrink:0;background:linear-gradient(90deg,var(--c1),var(--c2))}
-.cat__title small{font-size:.72rem;font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted)}
+.company__gallery{display:flex;flex-direction:column;gap:72px;min-width:0}
+.cat{display:flex;flex-direction:column;gap:20px;min-width:0}
+.cat__title{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-family:'Space Grotesk';font-weight:700;
+  font-size:1.7rem;letter-spacing:1.5px;text-transform:uppercase;color:color-mix(in srgb,var(--c1) 82%,#fff)}
+.cat__title::before{content:'';width:44px;height:4px;border-radius:2px;flex-shrink:0;background:linear-gradient(90deg,var(--c1),var(--c2))}
+.cat__title small{font-size:.95rem;font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted)}
+/* Nhóm hiển thị dạng lưới 2 cột (vd 2×2) thay vì full-width xếp dọc */
+.cat--grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.cat--grid .cat__title{grid-column:1/-1}
+@media (max-width:540px){.cat--grid{grid-template-columns:1fr}}
+
+/* Nhóm hiển thị dạng carousel ảnh tự chạy ngang (mờ 2 mép, dừng khi hover) */
+.cat__slider{overflow:hidden;min-width:0;width:100%;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+  mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.cat__track{display:flex;gap:18px;width:max-content;align-items:center;animation:catSlide 30s linear infinite}
+.cat__slider:hover .cat__track{animation-play-state:paused}
+.cat--slide .shot{flex-shrink:0;width:min(440px,74vw);aspect-ratio:4/3;border:none;background:transparent}
+.cat--slide .shot:hover{box-shadow:none}
+.cat--slide .shot img{width:100%;height:100%;object-fit:contain}
+@keyframes catSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.cat__track{animation:none}}
 
 .shot{position:relative;width:100%;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#0d0d14;cursor:pointer;
   transition:transform .5s var(--ease),box-shadow .5s;transform-style:preserve-3d}
