@@ -191,6 +191,20 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
 @keyframes toolbarScroll{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 @media (prefers-reduced-motion:reduce){.toolbar__track{animation:none}}
 
+/* ============ PARTNERS (logo đã hợp tác, chạy ngang) ============ */
+.partners{width:100%;padding:clamp(20px,4vh,50px) 0 clamp(40px,6vh,72px)}
+.partners__label{text-align:center;font-family:'Space Grotesk';letter-spacing:2.5px;text-transform:uppercase;font-size:.8rem;color:var(--muted);margin-bottom:30px}
+.partners__slider{overflow:hidden;min-width:0;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.partners__track{display:flex;align-items:center;gap:clamp(44px,6vw,90px);width:max-content;animation:partnersScroll 55s linear infinite}
+.partners__slider:hover .partners__track{animation-play-state:paused}
+.partners__track img{height:46px;width:auto;flex-shrink:0;object-fit:contain;
+  filter:brightness(0) invert(1);opacity:.62;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.partners__track img:hover{opacity:1;transform:scale(1.08)}
+@keyframes partnersScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.partners__track{animation:none;flex-wrap:wrap;justify-content:center}}
+
 /* WORK */
 .work__head{text-align:center;margin-bottom:56px}
 .work__sub{color:var(--muted);max-width:560px;margin:14px auto 0}
